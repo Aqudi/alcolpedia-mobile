@@ -19,7 +19,7 @@ class AlcolAppBar extends StatelessWidget with PreferredSizeWidget {
     return AppBar(
       title: appbarTitle(),
       actions: <IconButton>[
-        profileButton(),
+        profileButton(context),
       ],
       backgroundColor: Colors.transparent,
       elevation: 0,
@@ -34,10 +34,12 @@ class AlcolAppBar extends StatelessWidget with PreferredSizeWidget {
     return Text("");
   }
 
-  Widget profileButton() {
+  Widget profileButton(BuildContext context) {
     return IconButton(
       icon: Icon(Icons.person),
-      onPressed: () {},
+      onPressed: () {
+        Scaffold.of(context).openEndDrawer();
+      },
     );
   }
 }
