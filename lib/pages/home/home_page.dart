@@ -1,3 +1,4 @@
+import 'package:alcolpedia_mobile/pages/home/local_widgets/home_title.dart';
 import 'package:alcolpedia_mobile/utils/background_gradient.dart';
 import 'package:alcolpedia_mobile/utils/hex_color.dart';
 import 'package:alcolpedia_mobile/utils/palette.dart';
@@ -7,6 +8,9 @@ import 'package:alcolpedia_mobile/widgets/alcol_hash_chip.dart';
 import 'package:alcolpedia_mobile/widgets/alcol_profile_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import './local_widgets/widgets.dart';
+import 'local_widgets/home_searchbar.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -39,11 +43,11 @@ class HomePage extends StatelessWidget {
                 height: Get.height * 0.4,
                 child: Column(
                   children: [
-                    title(),
+                    HomeTitle(),
                     SizedBox(
                       height: 30,
                     ),
-                    searchbar(),
+                    HomeSearchBar(),
                   ],
                 ),
               ),
@@ -59,32 +63,6 @@ class HomePage extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget title() {
-    return Text(
-      "ALCOLPEDIA",
-      style: Theme.of(Get.context).textTheme.headline5.copyWith(
-            fontWeight: FontWeight.normal,
-          ),
-      textAlign: TextAlign.center,
-    );
-  }
-
-  Widget searchbar() {
-    return Container(
-      height: 85,
-      padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 30),
-      child: TextFormField(
-        decoration: InputDecoration(
-          filled: true,
-          fillColor: HexColor("#F5F5F5"),
-          enabledBorder: Theme.of(Get.context).inputDecorationTheme.border,
-          focusedBorder: Theme.of(Get.context).inputDecorationTheme.border,
-          suffixIcon: Icon(Icons.search),
         ),
       ),
     );
