@@ -1,10 +1,7 @@
 import 'package:alcolpedia_mobile/pages/home/local_widgets/home_title.dart';
 import 'package:alcolpedia_mobile/utils/background_gradient.dart';
 import 'package:alcolpedia_mobile/utils/palette.dart';
-import 'package:alcolpedia_mobile/widgets/alcol_appbar.dart';
-import 'package:alcolpedia_mobile/widgets/alcol_content_menu.dart';
 import 'package:alcolpedia_mobile/widgets/alcol_hash_chip.dart';
-import 'package:alcolpedia_mobile/widgets/alcol_profile_menu.dart';
 import 'package:alcolpedia_mobile/widgets/alcol_scaffold.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +11,7 @@ import './local_widgets/widgets.dart';
 import 'local_widgets/home_searchbar.dart';
 
 class HomePage extends StatelessWidget {
-  Faker faker = new Faker();
+  final Faker faker = new Faker();
 
   @override
   Widget build(BuildContext context) {

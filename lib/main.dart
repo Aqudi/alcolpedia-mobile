@@ -1,6 +1,5 @@
 import 'package:alcolpedia_mobile/utils/Routes.dart';
 import 'package:alcolpedia_mobile/utils/app_router.dart';
-import 'package:alcolpedia_mobile/utils/hex_color.dart';
 import 'package:alcolpedia_mobile/utils/palette.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
