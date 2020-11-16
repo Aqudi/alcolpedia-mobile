@@ -22,7 +22,7 @@ environment:
 
 dependencies:
   get: ^3.16.1
-  
+  faker:
   flutter:
     sdk: flutter
 
