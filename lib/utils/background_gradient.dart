@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class BackgroundGradient extends LinearGradient {
-  AlignmentGeometry begin;
-  AlignmentGeometry end;
+  final AlignmentGeometry begin;
+  final AlignmentGeometry end;
 
   BackgroundGradient({
     @required List<Color> colors,

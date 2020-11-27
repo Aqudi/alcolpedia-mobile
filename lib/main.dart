@@ -1,6 +1,5 @@
 import 'package:alcolpedia_mobile/utils/Routes.dart';
 import 'package:alcolpedia_mobile/utils/app_router.dart';
-import 'package:alcolpedia_mobile/utils/hex_color.dart';
 import 'package:alcolpedia_mobile/utils/palette.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -23,18 +22,17 @@ class AlcolpediaApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         primaryIconTheme: IconThemeData(
-          color: HexColor("#707070"),
-          size: 2000,
+          color: Palette.primaryGreen,
         ),
         inputDecorationTheme: InputDecorationTheme(
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Palette.darkGreen, width: 2.0),
-            borderRadius: BorderRadius.circular(10.0),
+            borderSide: BorderSide(color: Palette.primaryGreen, width: 2.0),
+            borderRadius: BorderRadius.circular(15.0),
           ),
         ),
         textTheme: TextTheme(
           headline5: TextStyle(
-            color: HexColor("#707070").withOpacity(1),
+            color: Palette.primaryGreen.withOpacity(1),
           ),
         ),
       ),

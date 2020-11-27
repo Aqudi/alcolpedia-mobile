@@ -1,5 +1,5 @@
 import 'package:alcolpedia_mobile/pages/pages.dart';
-import 'package:alcolpedia_mobile/utils/Routes.dart';
+import 'package:alcolpedia_mobile/utils/routes.dart';
 import 'package:get/get.dart';
 
 class AppRouter {

@@ -4,7 +4,7 @@ class AlcolAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   final Size preferredSize;
 
-  bool showTitle;
+  final bool showTitle;
   final String title;
 
   AlcolAppBar({

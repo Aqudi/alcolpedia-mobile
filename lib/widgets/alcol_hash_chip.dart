@@ -1,3 +1,4 @@
+import 'package:alcolpedia_mobile/utils/palette.dart';
 import 'package:flutter/material.dart';
 
 class AlcolHashChip extends StatelessWidget {
@@ -7,20 +8,29 @@ class AlcolHashChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      child: Container(
-        padding: const EdgeInsets.symmetric(
-          vertical: 5,
-          horizontal: 10,
+    final BorderRadius bordeRadius = BorderRadius.circular(10);
+
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 3),
+      child: InkWell(
+        borderRadius: bordeRadius,
+        child: Container(
+          padding: const EdgeInsets.symmetric(
+            vertical: 5,
+            horizontal: 10,
+          ),
+          decoration: BoxDecoration(
+            color: Colors.transparent,
+            borderRadius: bordeRadius,
+            border: Border.all(
+              color: Palette.primaryGreen,
+              width: 1.4,
+            ),
+          ),
+          child: Text("${this.tag}"),
         ),
-        decoration: BoxDecoration(
-          color: Colors.transparent,
-          borderRadius: BorderRadius.circular(30),
-          border: Border.all(),
-        ),
-        child: Text("${this.tag}"),
+        onTap: () => {},
       ),
-      onTap: () => {},
     );
   }
 }
