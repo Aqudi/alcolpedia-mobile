@@ -1,5 +1,5 @@
 import 'package:alcolpedia_mobile/utils/palette.dart';
-import 'package:alcolpedia_mobile/utils/routes.dart';
+import 'package:alcolpedia_mobile/utils/app_routes.dart';
 import 'package:alcolpedia_mobile/widgets/alcol_menu_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -28,27 +28,27 @@ class AlcolContentMenu extends StatelessWidget {
                     children: [
                       AlcolMenuButton(
                         label: 'Hot',
-                        routeName: Routes.hotPage,
+                        routeName: AppRoutes.hotPage,
                       ),
                       AlcolMenuButton(
                         label: '술게임',
-                        routeName: Routes.gamePage,
+                        routeName: AppRoutes.gamePage,
                       ),
                       AlcolMenuButton(
                         label: 'BGM',
-                        routeName: Routes.musicPage,
+                        routeName: AppRoutes.musicPage,
                       ),
                       AlcolMenuButton(
                         label: '건배사',
-                        routeName: Routes.battlecryPage,
+                        routeName: AppRoutes.battlecryPage,
                       ),
                       AlcolMenuButton(
                         label: '폭탄주',
-                        routeName: Routes.recipePage,
+                        routeName: AppRoutes.recipePage,
                       ),
                       AlcolMenuButton(
                         label: '옵션',
-                        routeName: Routes.optionPage,
+                        routeName: AppRoutes.optionPage,
                       ),
                     ],
                   )),

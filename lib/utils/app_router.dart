@@ -1,26 +1,26 @@
 import 'package:alcolpedia_mobile/pages/pages.dart';
-import 'package:alcolpedia_mobile/utils/routes.dart';
+import 'package:alcolpedia_mobile/utils/app_routes.dart';
 import 'package:get/get.dart';
 
 class AppRouter {
   static final route = [
     // home
-    GetPage(name: Routes.homePage, page: () => HomePage()),
+    GetPage(name: AppRoutes.homePage, page: () => HomePage()),
 
     // auth
-    GetPage(name: Routes.loginPage, page: () => LoginPage()),
-    GetPage(name: Routes.signupPage, page: () => SignupPage()),
+    GetPage(name: AppRoutes.loginPage, page: () => LoginPage()),
+    GetPage(name: AppRoutes.signupPage, page: () => SignupPage()),
 
     // content
-    GetPage(name: Routes.hotPage, page: () => HotPage()),
-    GetPage(name: Routes.gamePage, page: () => GamePage()),
-    GetPage(name: Routes.musicPage, page: () => MusicPage()),
-    GetPage(name: Routes.recipePage, page: () => RecipePage()),
-    GetPage(name: Routes.battlecryPage, page: () => BattleCryPage()),
-    GetPage(name: Routes.optionPage, page: () => OptionPage()),
+    GetPage(name: AppRoutes.hotPage, page: () => HotPage()),
+    GetPage(name: AppRoutes.gamePage, page: () => GamePage()),
+    GetPage(name: AppRoutes.musicPage, page: () => MusicPage()),
+    GetPage(name: AppRoutes.recipePage, page: () => RecipePage()),
+    GetPage(name: AppRoutes.battlecryPage, page: () => BattleCryPage()),
+    GetPage(name: AppRoutes.optionPage, page: () => OptionPage()),
 
     // customer
-    GetPage(name: Routes.claimPage, page: () => ClaimPage()),
-    GetPage(name: Routes.profilePage, page: () => ProfilePage()),
+    GetPage(name: AppRoutes.claimPage, page: () => ClaimPage()),
+    GetPage(name: AppRoutes.profilePage, page: () => ProfilePage()),
   ];
 }

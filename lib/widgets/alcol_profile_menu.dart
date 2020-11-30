@@ -1,5 +1,5 @@
 import 'package:alcolpedia_mobile/utils/palette.dart';
-import 'package:alcolpedia_mobile/utils/routes.dart';
+import 'package:alcolpedia_mobile/utils/app_routes.dart';
 import 'package:alcolpedia_mobile/widgets/alcol_menu_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -29,11 +29,11 @@ class AlcolProfileMenu extends StatelessWidget {
                       Spacer(),
                       AlcolMenuButton(
                         label: '프로필',
-                        routeName: Routes.profilePage,
+                        routeName: AppRoutes.profilePage,
                       ),
                       AlcolMenuButton(
                         label: '건의하기',
-                        routeName: Routes.claimPage,
+                        routeName: AppRoutes.claimPage,
                       ),
                       Spacer(),
                       Spacer(),
@@ -41,12 +41,12 @@ class AlcolProfileMenu extends StatelessWidget {
                       AlcolMenuButton(
                         label: '로그인',
                         border: Border.all(color: Colors.transparent),
-                        routeName: Routes.loginPage,
+                        routeName: AppRoutes.loginPage,
                       ),
                       AlcolMenuButton(
                         label: '회원가입',
                         border: Border.all(color: Colors.transparent),
-                        routeName: Routes.signupPage,
+                        routeName: AppRoutes.signupPage,
                       ),
                       Spacer(),
                       Spacer(),
