@@ -1,3 +1,4 @@
+import 'package:alcolpedia_mobile/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -20,25 +21,27 @@ class AlcolMenuButton extends StatelessWidget {
     return ListTile(
       contentPadding: const EdgeInsets.all(20),
       title: InkWell(
-        borderRadius: bordeRadius,
-        child: Container(
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-            color: Colors.transparent,
-            border: border ?? Border.all(color: Colors.white),
-            borderRadius: bordeRadius,
-          ),
-          child: Text(
-            '$label',
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 15,
+          borderRadius: bordeRadius,
+          child: Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.transparent,
+              border: border ?? Border.all(color: Colors.white),
+              borderRadius: bordeRadius,
             ),
-            textAlign: TextAlign.center,
+            child: Text(
+              '$label',
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 15,
+              ),
+              textAlign: TextAlign.center,
+            ),
           ),
-        ),
-        onTap: () => Get.toNamed(routeName),
-      ),
+          onTap: () {
+            Get.back();
+            Get.offNamedUntil(routeName, (route) => route.isFirst);
+          }),
     );
   }
 }
