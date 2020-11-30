@@ -3,7 +3,7 @@ import 'package:alcolpedia_mobile/utils/app_routes.dart';
 import 'package:get/get.dart';
 
 class AppRouter {
-  static final route = [
+  static final routes = [
     // home
     GetPage(name: AppRoutes.homePage, page: () => HomePage()),
 
