@@ -1,4 +1,6 @@
 import 'package:alcolpedia_mobile/utils/palette.dart';
+import 'package:alcolpedia_mobile/utils/routes.dart';
+import 'package:alcolpedia_mobile/widgets/alcol_menu_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -24,32 +26,34 @@ class AlcolProfileMenu extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      menu('프로필'),
-                      menu('건의하기'),
+                      Spacer(),
+                      AlcolMenuButton(
+                        label: '프로필',
+                        routeName: Routes.profilePage,
+                      ),
+                      AlcolMenuButton(
+                        label: '건의하기',
+                        routeName: Routes.claimPage,
+                      ),
+                      Spacer(),
+                      Spacer(),
+                      Spacer(),
+                      AlcolMenuButton(
+                        label: '로그인',
+                        border: Border.all(color: Colors.transparent),
+                        routeName: Routes.loginPage,
+                      ),
+                      AlcolMenuButton(
+                        label: '회원가입',
+                        border: Border.all(color: Colors.transparent),
+                        routeName: Routes.signupPage,
+                      ),
+                      Spacer(),
+                      Spacer(),
                     ],
                   )),
             ],
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget menu(String label) {
-    return ListTile(
-      contentPadding: const EdgeInsets.all(20),
-      title: Container(
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.white),
-          borderRadius: BorderRadius.circular(50),
-        ),
-        child: Text(
-          '$label',
-          style: const TextStyle(
-            color: Colors.white,
-          ),
-          textAlign: TextAlign.center,
         ),
       ),
     );
