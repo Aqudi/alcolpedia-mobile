@@ -58,24 +58,4 @@ class AlcolContentMenu extends StatelessWidget {
       ),
     );
   }
-
-  Widget menu(String label) {
-    return ListTile(
-      contentPadding: const EdgeInsets.all(20),
-      title: Container(
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.white),
-          borderRadius: BorderRadius.circular(50),
-        ),
-        child: Text(
-          '$label',
-          style: const TextStyle(
-            color: Colors.white,
-          ),
-          textAlign: TextAlign.center,
-        ),
-      ),
-    );
-  }
 }
