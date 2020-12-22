@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AlcolAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
@@ -31,7 +32,7 @@ class AlcolAppBar extends StatelessWidget with PreferredSizeWidget {
 
   Widget appbarCenterWidet() {
     if (showTitle) {
-      return titleWidget ?? Text("ALCOLPEDIA");
+      return titleWidget ?? Text("ALCOLPEDIA", style: Get.textTheme.headline5);
     }
     return Text("");
   }
