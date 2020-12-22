@@ -15,7 +15,7 @@ class AlcolpediaApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Alcolpedia',
       debugShowCheckedModeBanner: false,
-      defaultTransition: Transition.rightToLeft,
+      defaultTransition: Transition.fadeIn,
       getPages: AppRouter.routes,
       initialRoute: AppRoutes.homePage,
       theme: ThemeData(
