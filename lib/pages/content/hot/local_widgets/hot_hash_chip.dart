@@ -8,12 +8,18 @@ class HotHashChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final BorderRadius bordeRadius = BorderRadius.circular(10);
+    final bordeRadius = BorderRadius.circular(25);
 
     return Container(
       child: InkWell(
         borderRadius: bordeRadius,
         child: Container(
+          constraints: BoxConstraints(
+            minHeight: 25,
+          ),
+          margin: const EdgeInsets.symmetric(
+            horizontal: 5,
+          ),
           padding: const EdgeInsets.symmetric(
             vertical: 5,
             horizontal: 10,
@@ -26,7 +32,14 @@ class HotHashChip extends StatelessWidget {
               width: 1.4,
             ),
           ),
-          child: Text("${this.tag}"),
+          child: Center(
+            child: Text(
+              tag,
+              style: TextStyle(
+                fontSize: 9,
+              ),
+            ),
+          ),
         ),
         onTap: () => {},
       ),

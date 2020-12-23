@@ -1,7 +1,6 @@
-import 'package:alcolpedia_mobile/pages/content/hot/local_widgets/hot_title.dart';
+import 'package:alcolpedia_mobile/pages/content/hot/local_widgets/widgets.dart';
 import 'package:alcolpedia_mobile/utils/hex_color.dart';
 import 'package:alcolpedia_mobile/utils/palette.dart';
-import 'package:alcolpedia_mobile/widgets/alcol_hash_chip.dart';
 import 'package:alcolpedia_mobile/widgets/alcol_scaffold.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
@@ -21,74 +20,82 @@ class HotPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            HotTitle(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                AlcolHashChip(tag: "술게임"),
-                AlcolHashChip(tag: "BGM"),
-                AlcolHashChip(tag: "폭탄주"),
-                AlcolHashChip(tag: "건배사"),
-                AlcolHashChip(tag: "옵션"),
-              ],
+            SizedBox(height: 50),
+            Expanded(
+              flex: 0,
+              child: HotTitle(),
             ),
-            Container(
-              height: Get.height * 0.7,
-              child: Column(
-                children: List.generate(
-                  Get.height * 0.7 ~/ 70,
-                  (index) => Container(
-                    height: 55,
-                    width: Get.width * 0.8,
-                    margin: const EdgeInsets.symmetric(
-                      vertical: 8,
-                      horizontal: 10,
-                    ),
-                    padding: const EdgeInsets.symmetric(vertical: 13),
-                    decoration: BoxDecoration(
-                      color: HexColor("#BEC6A9"),
-                      border: Border.all(
-                        color: HexColor("#C59D9D"),
-                        width: 3,
+            SizedBox(height: 13),
+            Expanded(
+              flex: 0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  HotHashChip(tag: "술게임"),
+                  HotHashChip(tag: "BGM"),
+                  HotHashChip(tag: "폭탄주"),
+                  HotHashChip(tag: "건배사"),
+                  HotHashChip(tag: "옵션"),
+                ],
+              ),
+            ),
+            SizedBox(height: 13),
+            Expanded(
+              flex: 3,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: List.generate(
+                    10,
+                    (index) => Container(
+                      height: 40,
+                      width: Get.width * 0.8,
+                      margin: const EdgeInsets.symmetric(
+                        vertical: 8,
+                        horizontal: 10,
                       ),
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Flexible(
-                          child: Container(
-                            width: 50,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              border: Border.all(color: Colors.black),
-                              borderRadius: BorderRadius.circular(30),
-                            ),
-                            child: Text(
-                              "술게임",
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 5,
+                        horizontal: 10,
+                      ),
+                      decoration: BoxDecoration(
+                        color: HexColor("#DCE0D1").withOpacity(0.64),
+                        border: Border.all(
+                          color: HexColor("#C59D9D"),
+                          width: 2,
                         ),
-                        Flexible(
-                          child: Text(
-                            "술게임",
-                            textAlign: TextAlign.center,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              HotHashChip(tag: "술게임"),
+                            ],
                           ),
-                        ),
-                        Flexible(
-                          child: Row(
+                          Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Icon(Icons.thumb_up),
-                              Icon(Icons.favorite),
+                              Text(
+                                "술게임",
+                                textAlign: TextAlign.center,
+                              ),
                             ],
                           ),
-                        ),
-                      ],
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              build_icon(Icons.thumb_up, 10),
+                              build_icon(Icons.favorite_border, 5),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -96,6 +103,18 @@ class HotPage extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget build_icon(IconData icon, int info) {
+    return Padding(
+      padding: const EdgeInsets.all(3),
+      child: Row(
+        children: [
+          Icon(icon, size: 16),
+          Text(":$info"),
+        ],
       ),
     );
   }
