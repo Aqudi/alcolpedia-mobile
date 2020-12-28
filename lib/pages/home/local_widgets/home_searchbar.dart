@@ -1,7 +1,8 @@
-import 'package:alcolpedia_mobile/utils/hex_color.dart';
-import 'package:alcolpedia_mobile/utils/palette.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../utils/hex_color.dart';
+import '../../../utils/palette.dart';
 
 class HomeSearchBar extends StatelessWidget {
   @override
@@ -19,7 +20,7 @@ class HomeSearchBar extends StatelessWidget {
             padding: const EdgeInsets.all(5),
             child: Icon(
               Icons.search,
-              color: Palette.primaryGreen,
+              color: primaryGreen,
               size: 30,
             ),
           ),

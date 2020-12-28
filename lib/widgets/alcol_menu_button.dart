@@ -1,4 +1,3 @@
-import 'package:alcolpedia_mobile/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,7 +15,7 @@ class AlcolMenuButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final BorderRadius bordeRadius = BorderRadius.circular(50);
+    final bordeRadius = BorderRadius.circular(50);
 
     return ListTile(
       contentPadding: const EdgeInsets.all(20),

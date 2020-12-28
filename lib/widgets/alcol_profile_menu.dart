@@ -1,8 +1,9 @@
-import 'package:alcolpedia_mobile/utils/palette.dart';
-import 'package:alcolpedia_mobile/utils/app_routes.dart';
-import 'package:alcolpedia_mobile/widgets/alcol_menu_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../utils/app_routes.dart';
+import '../utils/palette.dart';
+import 'alcol_menu_button.dart';
 
 class AlcolProfileMenu extends StatelessWidget {
   @override
@@ -14,14 +15,14 @@ class AlcolProfileMenu extends StatelessWidget {
       child: Container(
         width: Get.width / 3,
         decoration: BoxDecoration(
-          color: Palette.deepDarkGreen,
+          color: deepDarkGreen,
         ),
         child: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
             children: <Widget>[
               Container(
-                  color: Palette.deepDarkGreen,
+                  color: deepDarkGreen,
                   height: Get.height,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,

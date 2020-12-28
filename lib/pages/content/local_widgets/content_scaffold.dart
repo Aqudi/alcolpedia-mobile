@@ -1,8 +1,9 @@
-import 'package:alcolpedia_mobile/pages/content/local_widgets/content_searchbar.dart';
-import 'package:alcolpedia_mobile/pages/content/local_widgets/content_title.dart';
-import 'package:alcolpedia_mobile/widgets/alcol_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../widgets/alcol_scaffold.dart';
+import '../local_widgets/content_searchbar.dart';
+import '../local_widgets/content_title.dart';
 
 class ContentScaffold extends StatelessWidget {
   final Color appBarBackgroundColor;

@@ -16,14 +16,14 @@ class BackgroundGradient extends LinearGradient {
         );
 
   static List<Color> _buildColors(List<Color> colors) {
-    return colors.fold<List<Color>>(<Color>[],
-        (List<Color> list, Color color) => list..addAll(<Color>[color, color]));
+    return colors.fold<List<Color>>(
+        <Color>[], (list, color) => list..addAll(<Color>[color, color]));
   }
 
   static List<double> _buildStops(List<Color> colors) {
-    final List<double> stops = <double>[0.0];
+    final stops = <double>[0.0];
 
-    for (int i = 1, len = colors.length; i < len; i++) {
+    for (var i = 1, len = colors.length; i < len; i++) {
       stops.add(i / colors.length);
       stops.add(i / colors.length);
     }
