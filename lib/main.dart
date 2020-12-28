@@ -1,6 +1,6 @@
+import 'package:alcolpedia_mobile/utils/app_routes.dart';
 import 'package:alcolpedia_mobile/utils/app_router.dart';
 import 'package:alcolpedia_mobile/utils/palette.dart';
-import 'package:alcolpedia_mobile/utils/routes.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -16,9 +16,9 @@ class AlcolpediaApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Alcolpedia',
       debugShowCheckedModeBanner: false,
-      defaultTransition: Transition.rightToLeft,
-      getPages: AppRouter.route,
-      initialRoute: Routes.homePage,
+      defaultTransition: Transition.fadeIn,
+      getPages: AppRouter.routes,
+      initialRoute: AppRoutes.homePage,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,

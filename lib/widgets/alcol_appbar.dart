@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AlcolAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   final Size preferredSize;
 
   final bool showTitle;
-  final String title;
+  final Widget titleWidget;
+  final Color backgroundColor;
 
   AlcolAppBar({
     this.showTitle = true,
-    this.title,
+    this.titleWidget,
+    this.backgroundColor,
     Key key,
   })  : preferredSize = Size.fromHeight(50.0),
         super(key: key);
@@ -17,19 +20,19 @@ class AlcolAppBar extends StatelessWidget with PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: appbarTitle(),
+      title: appbarCenterWidet(),
       actions: <IconButton>[
         profileButton(context),
       ],
-      backgroundColor: Colors.transparent,
+      backgroundColor: backgroundColor ?? Colors.transparent,
       elevation: 0,
       centerTitle: true,
     );
   }
 
-  Widget appbarTitle() {
+  Widget appbarCenterWidet() {
     if (showTitle) {
-      return Text(title ?? "ALCOLPEDIA");
+      return titleWidget ?? Text("ALCOLPEDIA", style: Get.textTheme.headline5);
     }
     return Text("");
   }
