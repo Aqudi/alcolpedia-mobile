@@ -21,8 +21,15 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  get: ^3.16.1
+  cached_network_image: ^2.5.0
+  dio: ^3.0.10
   faker:
+  get: ^3.24.0
+  flutter_markdown: ^0.5.1
+
+  flutter_hooks: ^0.15.0
+  hooks_riverpod: ^0.12.1
+
   flutter:
     sdk: flutter
 
