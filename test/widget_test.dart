@@ -9,7 +9,7 @@ import 'package:alcolpedia_mobile/main.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('Home page', (WidgetTester tester) async {
+  testWidgets('Home page', (tester) async {
     await tester.pumpWidget(AlcolpediaApp());
   });
 }

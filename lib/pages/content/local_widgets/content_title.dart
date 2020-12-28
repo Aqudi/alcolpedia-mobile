@@ -9,8 +9,8 @@ class ContentTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double iconSize = 35;
-    final double fontSize = 20;
+    final iconSize = 35.0;
+    final fontSize = 20.0;
 
     return Center(
       child: Row(

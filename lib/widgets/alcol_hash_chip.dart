@@ -1,5 +1,6 @@
-import 'package:alcolpedia_mobile/utils/palette.dart';
 import 'package:flutter/material.dart';
+
+import '../utils/palette.dart';
 
 class AlcolHashChip extends StatelessWidget {
   final String tag;
@@ -8,7 +9,7 @@ class AlcolHashChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final BorderRadius bordeRadius = BorderRadius.circular(10);
+    final bordeRadius = BorderRadius.circular(10);
 
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 3),
@@ -23,11 +24,11 @@ class AlcolHashChip extends StatelessWidget {
             color: Colors.transparent,
             borderRadius: bordeRadius,
             border: Border.all(
-              color: Palette.primaryGreen,
+              color: primaryGreen,
               width: 1.4,
             ),
           ),
-          child: Text("${this.tag}"),
+          child: Text("$tag"),
         ),
         onTap: () => {},
       ),

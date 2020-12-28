@@ -1,13 +1,13 @@
-import 'package:alcolpedia_mobile/pages/content/hot/local_widgets/widgets.dart';
-import 'package:alcolpedia_mobile/utils/hex_color.dart';
-import 'package:alcolpedia_mobile/utils/palette.dart';
-import 'package:alcolpedia_mobile/widgets/alcol_scaffold.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../utils/hex_color.dart';
+import '../../../widgets/alcol_scaffold.dart';
+import '../hot/local_widgets/widgets.dart';
+
 class HotPage extends StatelessWidget {
-  final Faker faker = new Faker();
+  final Faker faker = Faker();
   @override
   Widget build(BuildContext context) {
     print(Get.height * 0.7 ~/ 50);
@@ -90,8 +90,8 @@ class HotPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.end,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              build_icon(Icons.thumb_up, 10),
-                              build_icon(Icons.favorite_border, 5),
+                              buildIcon(Icons.thumb_up, 10),
+                              buildIcon(Icons.favorite_border, 5),
                             ],
                           ),
                         ],
@@ -107,7 +107,7 @@ class HotPage extends StatelessWidget {
     );
   }
 
-  Widget build_icon(IconData icon, int info) {
+  Widget buildIcon(IconData icon, int info) {
     return Padding(
       padding: const EdgeInsets.all(3),
       child: Row(

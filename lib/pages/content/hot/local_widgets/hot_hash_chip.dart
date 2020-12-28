@@ -1,5 +1,6 @@
-import 'package:alcolpedia_mobile/utils/palette.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../utils/palette.dart';
 
 class HotHashChip extends StatelessWidget {
   final String tag;
@@ -28,7 +29,7 @@ class HotHashChip extends StatelessWidget {
             color: Colors.transparent,
             borderRadius: bordeRadius,
             border: Border.all(
-              color: Palette.primaryGreen,
+              color: primaryGreen,
               width: 1.4,
             ),
           ),

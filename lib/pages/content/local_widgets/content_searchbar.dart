@@ -1,12 +1,13 @@
-import 'package:alcolpedia_mobile/utils/hex_color.dart';
-import 'package:alcolpedia_mobile/utils/palette.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../utils/hex_color.dart';
+import '../../../utils/palette.dart';
 
 class ContentSearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final double fontSize = 20;
+    final fontSize = 20.0;
     return Container(
       height: 100,
       padding: EdgeInsets.symmetric(vertical: 34),
@@ -20,7 +21,7 @@ class ContentSearchBar extends StatelessWidget {
             padding: const EdgeInsets.all(2),
             child: Icon(
               Icons.search,
-              color: Palette.primaryGreen,
+              color: primaryGreen,
               size: fontSize,
             ),
           ),

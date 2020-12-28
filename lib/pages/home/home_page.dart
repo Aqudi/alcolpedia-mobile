@@ -1,17 +1,17 @@
-import 'package:alcolpedia_mobile/pages/home/local_widgets/home_title.dart';
-import 'package:alcolpedia_mobile/utils/background_gradient.dart';
-import 'package:alcolpedia_mobile/utils/palette.dart';
-import 'package:alcolpedia_mobile/widgets/alcol_hash_chip.dart';
-import 'package:alcolpedia_mobile/widgets/alcol_scaffold.dart';
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import './local_widgets/widgets.dart';
+import '../../utils/background_gradient.dart';
+import '../../utils/palette.dart';
+import '../../widgets/alcol_hash_chip.dart';
+import '../../widgets/alcol_scaffold.dart';
 import 'local_widgets/home_searchbar.dart';
+import 'local_widgets/home_title.dart';
+import 'local_widgets/widgets.dart';
 
 class HomePage extends StatelessWidget {
-  final Faker faker = new Faker();
+  final Faker faker = Faker();
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +25,10 @@ class HomePage extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: BackgroundGradient(
                   colors: [
-                    Palette.darkGreen,
-                    Palette.green,
-                    Palette.ivory,
-                    Palette.beige,
+                    darkGreen,
+                    green,
+                    ivory,
+                    beige,
                   ],
                 ),
               ),

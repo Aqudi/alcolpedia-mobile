@@ -1,7 +1,7 @@
-import 'package:alcolpedia_mobile/widgets/alcol_appbar.dart';
-import 'package:alcolpedia_mobile/widgets/alcol_content_menu.dart';
-import 'package:alcolpedia_mobile/widgets/alcol_profile_menu.dart';
 import 'package:flutter/material.dart';
+import 'alcol_appbar.dart';
+import 'alcol_content_menu.dart';
+import 'alcol_profile_menu.dart';
 
 class AlcolScaffold extends StatelessWidget {
   final Widget body;
@@ -19,7 +19,7 @@ class AlcolScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool showTitle = (appBartitleWidget != null) ? true : appBarTitle;
+    final showTitle = (appBartitleWidget != null) ? true : appBarTitle;
 
     return SafeArea(
       child: Scaffold(
