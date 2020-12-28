@@ -32,10 +32,10 @@ class ContentScaffold extends StatelessWidget {
                 height: Get.height * 0.13,
               ),
               contentTitle,
-              SizedBox(
-                height: Get.height * 0.1,
+              Container(
+                height: Get.height,
+                child: body ?? _buildBody(),
               ),
-              _buildBody(),
             ],
           ),
         ),
