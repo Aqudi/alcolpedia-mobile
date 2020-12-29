@@ -16,7 +16,7 @@ abstract class ContentService {
 class ContentServiceImpl extends ContentService {
   Future<List<Content>> fetchContents(ContentType contentType) async {
     var response =
-        await dio.get("$baseUrl/articles?name=${contentType.string}");
+        await dio.get("$apiBaseUrl/articles?name=${contentType.string}");
 
     var contents = <Content>[];
     for (var content in response.data) {
