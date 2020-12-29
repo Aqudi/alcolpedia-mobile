@@ -4,7 +4,7 @@ class Tag {
   Tag({this.title});
 
   Tag.fromJson(Map<String, dynamic> json) {
-    title = json['fields']['title'];
+    title = json['title'];
   }
 
   Map<String, dynamic> toJson() {

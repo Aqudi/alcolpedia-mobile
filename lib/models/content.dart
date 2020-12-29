@@ -9,7 +9,7 @@ class Content {
   String updatedAt;
   String summary;
   String image;
-  Null audio;
+  String audio;
 
   Content(
       {this.sort,
