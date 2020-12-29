@@ -13,7 +13,15 @@ abstract class TagService {
 
 class TagServiceImpl extends TagService {
   Future<List<Tag>> fetchContentTags() async {
-    var response = await dio.get("$baseUrl/tag");
-    return response.data;
+    var response = await dio.get("$apiBaseUrl/tag");
+
+    if (response.statusCode != 200) {
+      throw Exception(response.data);
+    }
+    var tags = <Tag>[];
+    for (var tag in response.data) {
+      tags.add(Tag.fromJson(tag));
+    }
+    return tags;
   }
 }
