@@ -2,7 +2,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../models/tag.dart';
 import '../services/tag_service.dart';
-import '../utils/content_type.dart';
 
 final tagProvider = StateProvider<List<Tag>>((ref) => null);
 

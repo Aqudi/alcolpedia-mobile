@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/all.dart';
 
-import '../../models/tag.dart';
 import '../../providers/tag_provider.dart';
 import '../../utils/background_gradient.dart';
 import '../../utils/palette.dart';
