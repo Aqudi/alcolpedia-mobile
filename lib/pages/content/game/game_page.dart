@@ -84,7 +84,13 @@ class GameTile extends HookWidget {
   Widget _buildIcon(icon) {
     return InkWell(
       customBorder: CircleBorder(),
-      onTap: () {},
+      onTap: () {
+        Get.showSnackbar(GetBar(
+          title: "Notice",
+          message: "현재 앱에서는 지원하지 않는 기능입니다.",
+          duration: Duration(seconds: 2),
+        ));
+      },
       child: Container(
         padding: const EdgeInsets.all(5),
         child: Icon(
