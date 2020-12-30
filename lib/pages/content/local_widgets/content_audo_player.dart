@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_sound/flutter_sound.dart';
 
-class GameAudioPlayer extends StatefulWidget {
+class ContentAudioPlayer extends StatefulWidget {
   final String audio;
 
-  GameAudioPlayer({this.audio, Key key}) : super(key: key);
+  ContentAudioPlayer({this.audio, Key key}) : super(key: key);
 
   @override
-  _GameAudioPlayerState createState() => _GameAudioPlayerState();
+  _ContentAudioPlayerState createState() => _ContentAudioPlayerState();
 }
 
 typedef Fn = void Function();
 
-class _GameAudioPlayerState extends State<GameAudioPlayer> {
+class _ContentAudioPlayerState extends State<ContentAudioPlayer> {
   FlutterSoundPlayer _mPlayer = FlutterSoundPlayer();
   bool _mPlayerIsInited = false;
 
