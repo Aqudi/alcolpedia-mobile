@@ -1,2 +1,2 @@
-final baseUrl = "http://192.168.123.110:8000";
+final baseUrl = "http://www.alcolpedia.com";
 final apiBaseUrl = "$baseUrl/api";
