@@ -9,17 +9,20 @@ import '../local_widgets/content_card_grid.dart';
 import '../local_widgets/content_scaffold.dart';
 import '../local_widgets/content_title.dart';
 
+final gamesProvider = getContentsProvider();
+final gamesViewModel = getContentsViewModel(gamesProvider);
+
 class GamePage extends HookWidget {
   final contentType = ContentType.game;
 
   @override
   Widget build(BuildContext context) {
     useEffect(() {
-      context.read(contentsViewModel).initState(contentType);
-      return context.read(contentsViewModel).dispose;
+      context.read(gamesViewModel).initState(contentType);
+      return context.read(gamesViewModel).dispose;
     }, []);
 
-    final contents = useProvider(contentsProvider).state;
+    final contents = useProvider(gamesProvider).state;
 
     if (contents == null) {
       return Container(child: const Center(child: CircularProgressIndicator()));
