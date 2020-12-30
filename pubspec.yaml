@@ -26,6 +26,7 @@ dependencies:
   faker:
   get: ^3.24.0
   flutter_markdown: ^0.5.1
+  flutter_sound: ^7.4.9+4
 
   flutter_hooks: ^0.15.0
   hooks_riverpod: ^0.12.1
