@@ -23,19 +23,20 @@ class ContentScaffold extends StatelessWidget {
       child: AlcolScaffold(
         appBartitleWidget: ContentSearchBar(),
         appBarBackgroundColor: appBarBackgroundColor,
-        body: SingleChildScrollView(
+        body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
                 height: Get.height * 0.13,
               ),
               contentTitle,
-              SizedBox(
-                height: Get.height * 0.1,
+              SingleChildScrollView(
+                child: Container(
+                  padding: const EdgeInsets.only(top: 15),
+                  height: Get.height * 0.75,
+                  child: body ?? _buildBody(),
+                ),
               ),
-              _buildBody(),
             ],
           ),
         ),

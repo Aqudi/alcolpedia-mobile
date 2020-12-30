@@ -5,11 +5,11 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:alcolpedia_mobile/main.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('Home page', (tester) async {
-    await tester.pumpWidget(AlcolpediaApp());
+  test('Hello world', () {
+    var hello = "Hello world";
+    expect(hello, hello);
   });
 }

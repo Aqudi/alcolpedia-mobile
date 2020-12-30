@@ -31,10 +31,12 @@ class AlcolProfileMenu extends StatelessWidget {
                       AlcolMenuButton(
                         label: '프로필',
                         routeName: AppRoutes.profilePage,
+                        disabled: true,
                       ),
                       AlcolMenuButton(
                         label: '건의하기',
                         routeName: AppRoutes.claimPage,
+                        disabled: true,
                       ),
                       Spacer(),
                       Spacer(),
@@ -43,11 +45,13 @@ class AlcolProfileMenu extends StatelessWidget {
                         label: '로그인',
                         border: Border.all(color: Colors.transparent),
                         routeName: AppRoutes.loginPage,
+                        disabled: true,
                       ),
                       AlcolMenuButton(
                         label: '회원가입',
                         border: Border.all(color: Colors.transparent),
                         routeName: AppRoutes.signupPage,
+                        disabled: true,
                       ),
                       Spacer(),
                       Spacer(),
