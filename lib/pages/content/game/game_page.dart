@@ -12,6 +12,7 @@ import '../../../utils/content_type.dart';
 import '../../../utils/palette.dart';
 import '../local_widgets/content_scaffold.dart';
 import '../local_widgets/content_title.dart';
+import 'local_widgets/widgets.dart';
 
 final _currentContent = ScopedProvider<Content>(null);
 
@@ -74,7 +75,7 @@ class GameTile extends HookWidget {
             ),
           ),
           onTap: () {
-            Get.dialog(_buildDetailDialog(content));
+            _showDetailDialog(content);
           },
         ),
       ),
@@ -121,9 +122,10 @@ class GameTile extends HookWidget {
     );
   }
 
-  Widget _buildDetailDialog(Content content) {
+  void _showDetailDialog(Content content) {
     final body = content.body.replaceAll("/media/", "$baseUrl/media/");
-    return AlertDialog(
+    final audio = content.audio.replaceAll("/media/", "$baseUrl/media/");
+    final alertDialog = AlertDialog(
       content: Stack(
         children: [
           Positioned(
@@ -143,6 +145,11 @@ class GameTile extends HookWidget {
           Column(
             children: [
               Text(content.title, style: Get.theme.textTheme.headline5),
+              (content.audio.isNotEmpty)
+                  ? GameAudioPlayer(
+                      audio: audio,
+                    )
+                  : Container(),
               Divider(),
               Flexible(
                 child: SingleChildScrollView(
@@ -156,6 +163,7 @@ class GameTile extends HookWidget {
         ],
       ),
     );
+    Get.dialog(alertDialog).then((value) => print("Hello"));
   }
 }
 
