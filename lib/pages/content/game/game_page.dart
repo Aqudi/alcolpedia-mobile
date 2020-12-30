@@ -124,7 +124,7 @@ class GameTile extends HookWidget {
 
   void _showDetailDialog(Content content) {
     final body = content.body.replaceAll("/media/", "$baseUrl/media/");
-    final audio = content.audio.replaceAll("/media/", "$baseUrl/media/");
+    final audio = "$baseUrl${content.audio}";
     final alertDialog = AlertDialog(
       content: Stack(
         children: [
@@ -145,7 +145,7 @@ class GameTile extends HookWidget {
           Column(
             children: [
               Text(content.title, style: Get.theme.textTheme.headline5),
-              (content.audio.isNotEmpty)
+              (content.audio != null)
                   ? GameAudioPlayer(
                       audio: audio,
                     )
