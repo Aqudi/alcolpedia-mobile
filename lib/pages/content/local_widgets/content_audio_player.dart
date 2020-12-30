@@ -63,20 +63,19 @@ class _ContentAudioPlayerState extends State<ContentAudioPlayer> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        SizedBox(
-          height: 15,
-        ),
-        Text("인트로를 들어볼 수 있어요!"),
-        RaisedButton(
-          onPressed: getPlaybackFn(),
-          color: Colors.white,
-          disabledColor: Colors.grey,
+    return Material(
+      elevation: 2,
+      color: Colors.white,
+      shape: CircleBorder(),
+      child: InkWell(
+        onTap: getPlaybackFn(),
+        customBorder: CircleBorder(),
+        child: Container(
+          padding: const EdgeInsets.all(8),
           child:
               _mPlayer.isPlaying ? Icon(Icons.pause) : Icon(Icons.play_arrow),
         ),
-      ],
+      ),
     );
   }
 }

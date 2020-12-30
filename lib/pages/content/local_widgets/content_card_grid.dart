@@ -7,7 +7,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../models/content.dart';
 import '../../../services/constants.dart';
-import 'content_audo_player.dart';
+import 'content_audio_player.dart';
 
 final _currentContent = ScopedProvider<Content>(null);
 
@@ -31,19 +31,18 @@ class ContentItem extends HookWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                      child: (content.image != null)
-                          ? CachedNetworkImage(
+                    (content.image != null)
+                        ? Container(
+                            height: 100,
+                            width: 100,
+                            child: CachedNetworkImage(
                               imageUrl: "$baseUrl${content.image}",
                               placeholder: (context, url) =>
                                   CircularProgressIndicator(),
                               errorWidget: (context, url, error) =>
                                   Icon(Icons.error),
-                            )
-                          : Container(),
-                    ),
+                            ))
+                        : Container(),
                     Column(
                       children: [
                         Text(
@@ -126,21 +125,8 @@ class ContentItem extends HookWidget {
     final alertDialog = AlertDialog(
       content: Stack(
         children: [
-          Positioned(
-            top: 0,
-            right: 0,
-            child: InkWell(
-              customBorder: CircleBorder(),
-              child: Icon(
-                Icons.close,
-                size: 30,
-              ),
-              onTap: () {
-                Get.back();
-              },
-            ),
-          ),
           Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               Text(content.title, style: Get.theme.textTheme.headline5),
               (content.audio != null)
@@ -157,11 +143,25 @@ class ContentItem extends HookWidget {
                 ),
               ),
             ],
-          )
+          ),
+          Positioned(
+            top: 0,
+            right: 0,
+            child: InkWell(
+              customBorder: CircleBorder(),
+              child: Icon(
+                Icons.close,
+                size: 30,
+              ),
+              onTap: () {
+                Get.back();
+              },
+            ),
+          ),
         ],
       ),
     );
-    Get.dialog(alertDialog).then((value) => print("Hello"));
+    Get.dialog(alertDialog);
   }
 }
 
@@ -176,9 +176,8 @@ class ContentCardGridView extends HookWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       shrinkWrap: true,
       gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        maxCrossAxisExtent: 300.0,
-        // crossAxisSpacing: 10,
-        // mainAxisSpacing: 10,
+        maxCrossAxisExtent: 330.0,
+        childAspectRatio: 8 / 9,
       ),
       itemCount: contents.length,
       itemBuilder: (ctx, idx) => ProviderScope(
