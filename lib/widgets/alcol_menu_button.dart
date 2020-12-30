@@ -5,12 +5,14 @@ class AlcolMenuButton extends StatelessWidget {
   final String label;
   final String routeName;
   final Border border;
+  final bool disabled;
 
   const AlcolMenuButton({
     Key key,
     this.label,
     @required this.routeName,
     this.border,
+    this.disabled = false,
   }) : super(key: key);
 
   @override
@@ -38,8 +40,16 @@ class AlcolMenuButton extends StatelessWidget {
             ),
           ),
           onTap: () {
-            Get.back();
-            Get.offNamedUntil(routeName, (route) => route.isFirst);
+            if (disabled) {
+              Get.showSnackbar(GetBar(
+                title: "Notice",
+                message: "현재 앱에서는 지원하지 않는 기능입니다.",
+                duration: Duration(seconds: 2),
+              ));
+            } else {
+              Get.back();
+              Get.offNamedUntil(routeName, (route) => route.isFirst);
+            }
           }),
     );
   }
