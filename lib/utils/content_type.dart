@@ -1,9 +1,9 @@
 enum ContentType {
   game,
   setting,
-  battleCry,
-  music,
-  recipe,
+  cheers,
+  bgm,
+  alcohol,
 }
 
 extension EnumToString on ContentType {
