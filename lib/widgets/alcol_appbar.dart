@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AlcolAppBar extends StatelessWidget with PreferredSizeWidget {
+mixin PreferredSizeMixin implements PreferredSizeWidget {}
+
+class AlcolAppBar extends StatelessWidget with PreferredSizeMixin {
   @override
   final Size preferredSize;
 
