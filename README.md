@@ -1,16 +1,13 @@
-# alcolpedia_mobile
+# Alcolpedia
 
-A new Flutter project.
+멋쟁이 사자처럼 8기 2학기 교내 프로젝트  
 
-## Getting Started
+1학기 프로젝트로 만든 한국의 술과 관련된 문화를 소개하는 알콜피디아 프로젝트의 Flutter 앱 구현체입니다. 유저와 관련된 기능은 구현하지 않았고, 등록된 컨텐츠를 조회하는 기능들을 구현했습니다.
 
-This project is a starting point for a Flutter application.
+## 서버 저장소
 
-A few resources to get you started if this is your first Flutter project:
+[Github repository](https://github.com/rlwjd4177/alcolpedia)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## APK 파일
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[설치링크](./docs/alcolpedia.apk)

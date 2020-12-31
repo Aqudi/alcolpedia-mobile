@@ -1,4 +1,4 @@
-package com.example.alcolpedia_mobile
+package com.alcolpedia.www
 
 import io.flutter.embedding.android.FlutterActivity
 
