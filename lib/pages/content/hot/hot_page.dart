@@ -1,16 +1,28 @@
-import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../providers/hot_contents_provider.dart';
 import '../../../utils/hex_color.dart';
 import '../../../widgets/alcol_scaffold.dart';
 import '../hot/local_widgets/widgets.dart';
+import '../local_widgets/content_card_grid.dart';
 
-class HotPage extends StatelessWidget {
-  final Faker faker = Faker();
+class HotPage extends HookWidget {
+  final contentLength = 6;
+
   @override
   Widget build(BuildContext context) {
-    print(Get.height * 0.7 ~/ 50);
+    useEffect(() {
+      context.read(hotContentsViewModel).initState(contentLength);
+      return context.read(hotContentsViewModel).dispose;
+    }, []);
+
+    final contents = useProvider(hotContentsProvider).state;
+
+    if (contents == null) {
+      return Container(child: const Center(child: CircularProgressIndicator()));
+    }
     return AlcolScaffold(
       appBarBackgroundColor: Colors.transparent,
       appBarTitle: true,
@@ -44,61 +56,7 @@ class HotPage extends StatelessWidget {
             Expanded(
               flex: 3,
               child: SingleChildScrollView(
-                child: Column(
-                  children: List.generate(
-                    10,
-                    (index) => Container(
-                      height: 40,
-                      width: Get.width * 0.8,
-                      margin: const EdgeInsets.symmetric(
-                        vertical: 8,
-                        horizontal: 10,
-                      ),
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 5,
-                        horizontal: 10,
-                      ),
-                      decoration: BoxDecoration(
-                        color: HexColor("#DCE0D1").withOpacity(0.64),
-                        border: Border.all(
-                          color: HexColor("#C59D9D"),
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child: Stack(
-                        alignment: Alignment.center,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              HotHashChip(tag: "술게임"),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text(
-                                "술게임",
-                                textAlign: TextAlign.center,
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              buildIcon(Icons.thumb_up, 10),
-                              buildIcon(Icons.favorite_border, 5),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
+                child: ContentCardGridView(contents: contents),
               ),
             ),
           ],
