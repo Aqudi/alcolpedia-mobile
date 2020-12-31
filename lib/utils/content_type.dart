@@ -4,6 +4,8 @@ enum ContentType {
   cheers,
   bgm,
   alcohol,
+  // ignore: constant_identifier_names
+  hot_contents,
 }
 
 extension EnumToString on ContentType {
